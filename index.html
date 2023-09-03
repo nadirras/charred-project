@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Charred Project</title>
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <a href="#home" class="navbar-logo">Charred<span>Project</span></a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#story">Story</a>
+        <a href="#characters">Characters</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+        <!-- <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a> -->
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+
+      <!-- Search form start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box">
+          <i data-feather="search"></i>
+        </label>
+      </div>
+      <!-- Search form end -->
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Hero start -->
+    <section class="hero" id="home">
+      <!-- section biar penuh satu layar dan kasih image sedangkan main isinya -->
+      <div class="content">
+        <h1><span>Isolation</span> is now available in online stores!</h1>
+        <p>Welcome to the suspenseful realm of Charred Project!</p>
+        <a href="https://linktr.ee/noirrosetea" target="blank" class="cta"
+          >Buy Now</a
+        >
+      </div>
+      <div class="hero-overlay"></div>
+    </section>
+    <!-- Hero end -->
+
+    <!-- Story start -->
+    <section id="story" class="story">
+      <h2>Story</h2>
+      <div class="row">
+        <div class="story-img">
+          <img src="img/isolation-cover.jpg" alt="Story" />
+        </div>
+        <div class="content">
+          <h3>Buku 0: Isolation</h3>
+          <p>
+            Thraver merupakan seorang anak SMA asrama yang sering memecahkan
+            kasus kecil di sekolahnya, seperti barang hilang hingga perundungan.
+            Suatu hari, ia merasa diikuti dan sesampainya di rumah, ternyata ia
+            diculik. Ia terbangun di sebuah rumah mewah bernuansa kuno yang
+            menurutnya asing. <br />
+
+            Thraver disambut dengan baik oleh orang-orang di rumah itu dan
+            merasa kerasan di sana. Namun, ternyata keindahan itu tidak
+            berlangsung lama setelah mengetahui bahwa yang ia tempati adalah
+            tempat yang salah, yaitu tempat percobaan manusia. Bagaimana ia bisa
+            bebas dari tempat mengerikan itu?
+          </p>
+          <a href="#" id="peta-akademi"
+            >Peta Area Akademi Pusat Mangroveshield</a
+          >
+          <h3>Buku 1: Shadows of Deception</h3>
+          <h4>Coming Soon...</h4>
+        </div>
+      </div>
+    </section>
+    <!-- Story end -->
+
+    <!-- Characters start -->
+    <section id="characters" class="characters">
+      <h2>Characters</h2>
+      <div class="characters-grid">
+        <!-- Left Container -->
+        <div class="left-container">
+          <div class="contents">
+            <!-- konten 1 kiri -->
+            <h3>Thraver Cetewind</h3>
+            <p>
+              Thraver Cetewind adalah seorang remaja SMA yang memiliki minat
+              dalam fisika dan hal-hal yang berbau misteri. Ia dikenal dengan
+              kepribadiannya yang ceria dan optimis, suka menghadapi tantangan
+              dengan rasa ingin tahu yang tinggi.
+            </p>
+          </div>
+          <!-- konten 2 kiri -->
+          <div class="blank" id="blank"></div>
+          <!-- konten 3 kiri-->
+          <div class="contents">
+            <h3>Renshaw Lee</h3>
+            <p>
+              Renshaw Lee adalah seseorang yang suka aktif dalam berorganisasi
+              dalam sekolah. Ia adalah kakak kelas Thraver di SMA. Renshaw
+              cerdik dalam mengambil keputusan dan suka belajar hal baru.
+            </p>
+          </div>
+        </div>
+        <!-- Right Container -->
+        <div class="right-container">
+          <div class="blank" id="blank"></div>
+          <div class="contents">
+            <h3>Skeleton</h3>
+            <p>
+              Skeleton adalah seseorang yang cerdik dalam banyak hal, termasuk
+              olahraga. Dia suka menjelajahi hal baru.
+            </p>
+          </div>
+          <div class="blank" id="blank"></div>
+          <!-- <div class="contents">
+            <h3>Other Characters</h3>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <div class="other-characters" id="other-characters">
+      <!-- <h3>Other Characters</h3> -->
+      <div class="inside-other-characters">
+        <a
+          href="#other-characters"
+          class="other-characters-button"
+          id="toggleButton"
+        >
+          Other Characters
+
+          <i data-feather="chevron-down" id="chevronDownIcon"></i>
+
+          <i data-feather="chevron-up" id="chevronUpIcon" class="hidden"></i>
+        </a>
+      </div>
+      <div class="hidden-content" id="hiddenContent">
+        <h3>Ansel</h3>
+        <h3>Brent</h3>
+        <h3>Carson</h3>
+        <h3>Alsa</h3>
+        <h3>Bart</h3>
+      </div>
+    </div>
+    <!-- Characters end -->
+
+    <!-- Contact start -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <a href="https://www.instagram.com/zuraxchi/" target="blank"
+        ><i data-feather="instagram"></i> zuraxchi</a
+      >
+    </section>
+    <!-- Contact end -->
+
+    <!-- Footer -->
+    <footer>
+      ©Noir Rosetea (One PEACH Media) / Charred Project. All Right Reserved
+    </footer>
+
+    <!-- Modal Box Item Detail start -->
+    <div class="modal" id="modal">
+      <div class="modal-container">
+        <a href="#">
+          <i class="close-icon" data-feather="x"></i>
+        </a>
+        <div class="modal-content">
+          <img src="img/markas-akademi.jpg" alt="map" id="modalImage" />
+          <div class="map-content">
+            <h3>Peta Akademi Pusat Mangroveshield</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Box Item Detail end -->
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+    <!-- Include the Feather Icons library -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.31.0/dist/feather.min.js"></script>
+
+    <!-- My Javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>
