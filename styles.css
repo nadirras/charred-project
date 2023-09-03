@@ -1,0 +1,682 @@
+/* inisialisasi warna */
+:root {
+  --primary: #9f8d67;
+  --bg: #120f12;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  /* min-height: 2000px; */
+}
+
+/* Navbar start */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(18, 15, 18, 0.8);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navbar .navbar-logo {
+  font-family: "Crimson Text", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+  transition: color 0.2s ease; /* Smooth color transition on hover */
+  position: relative; /* Add relative positioning for pseudo-element */
+}
+
+.navbar .navbar-logo span {
+  color: #b69b7d;
+}
+
+.navbar .navbar-logo::before {
+  content: "";
+  position: absolute;
+  bottom: -4px; /* Adjust the distance from the text */
+  left: 0;
+  width: 100%;
+  height: 3px; /* Adjust the thickness of the underline */
+  background-color: var(--primary); /* Your primary color */
+  transform: scaleX(0);
+  transition: transform 0.2s ease; /* Smooth underline effect */
+}
+
+.navbar .navbar-logo:hover {
+  color: var(--primary); /* Change font color on hover */
+}
+
+.navbar .navbar-logo:hover::before {
+  transform: scaleX(1);
+}
+
+/* .navbar .navbar-ngeng {
+  display: flex;
+} */
+
+/* .navbar .navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+} */
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  /* inline-block biar bisa di margin */
+  margin: 0 2rem; /* Increase the spacing between links */
+  transition: color 0.2s ease; /* Smooth hover effect */
+  font-size: 1.2rem;
+  margin: 0 0.6rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+/* pseudoelement biar ada garis di bawahnya */
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.2rem;
+  border-bottom: 0.3rem solid #b6aca8;
+  transform: scaleX(0);
+  transition: 0.2s ease;
+}
+
+.navbar .navbar-nav a:hover::after {
+  /* ini perlu diperhatikan di versi baru yang dipakai bisanya langsung hover::after nya*/
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-left: 2rem; /* Adjust spacing */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Navbar Search form */
+.navbar .search-form {
+  position: absolute;
+  /* biar posisinya gabiasa */
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  /* transformasi awalnya gaada */
+  transform: scaleY(0);
+  /* biar munculnya bagus */
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  /* if active maka muncul*/
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.4rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 1.8rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
+}
+
+/* Navbar end */
+
+/* Hero start */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("img/library.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* ngasih gradasi */
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  /* color: rgb(18, 15, 18); */
+  background: linear-gradient(
+    0deg,
+    rgba(18, 15, 18, 1) 8%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
+  line-height: 1.3;
+}
+
+.hero .content span {
+  color: #e7ccbc;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.5;
+  text-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
+  /* mencampurkan dua warna yang overlap (asa gaterlalu ada bedanya sih di sini mah, kecuali pake yg book.jpg */
+  /* mix-blend-mode: difference; */
+}
+
+.hero .content a {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.8rem;
+  box-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
+}
+
+.hero .content a:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #120f12;
+}
+.hero-overlay {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(18, 15, 18, 1) 8%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  backdrop-filter: blur(0.5px); /* Add blur for a smoother effect */
+}
+
+/* Hero end */
+
+/* Story start */
+.story {
+  /* padding gede gede biar ke bawah keliatan tulisannya. Kalau 7% kiri kanan 1.4rem bawah */
+  padding: 8rem 7% 1.4rem;
+}
+
+.story h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.story .row {
+  display: flex;
+}
+
+.story .row .story-img {
+  flex: 1 1 20rem;
+}
+
+.story .row .story-img img {
+  width: 85%;
+}
+
+.story .row .content {
+  flex: 1 1 35rem;
+  padding: 0 0.5rem;
+}
+
+.story .row .content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+.story .row .content p {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 100;
+  line-height: 1.8;
+}
+
+.story .row {
+  /* biar turun ke bawah */
+  flex-wrap: wrap;
+}
+
+.story .row .content {
+  padding: 0;
+}
+
+.story .row .content a {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.8rem;
+  box-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
+}
+
+.story .row .content a:hover {
+  background-color: #fff;
+  color: #120f12;
+}
+/* Story end */
+
+/* Pang ribedna ieu */
+/* Characters start */
+.characters {
+  /* margin-bottom: 3rem; */
+  /* padding: 8rem; */
+  /* position: relative;  */
+  /* Add position relative to act as a reference for absolute positioning */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 20rem;
+  padding-top: 8rem;
+}
+
+.characters h2 {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.characters ul {
+  list-style: none;
+  /* inisialisasi awal */
+  padding: 0;
+  margin: 0;
+}
+
+.characters .characters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*Dua kolom lebarnya sama */
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  gap: 1rem;
+}
+
+.characters .characters-grid .left-container .contents,
+.characters .characters-grid .right-container .contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.characters .characters-grid .left-container .contents > h3,
+.characters .characters-grid .right-container .contents > h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-top: 1rem;
+  margin: 0;
+  padding: 0.8rem 7%;
+  max-width: 60rem;
+}
+
+.characters .characters-grid .left-container .contents > p,
+.characters .characters-grid .right-container .contents > p {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 100;
+  line-height: 1.8;
+  padding: 0.5rem 7%;
+  max-width: 60rem;
+  margin: 0;
+}
+
+#blank {
+  /* This class creates a blank space */
+  width: 50%;
+  height: 50%;
+}
+
+.other-characters {
+  /* Position the "Other Characters" section below the characters section */
+  text-align: center; /* Center the "Other Characters" section */
+  /* margin: 31rem 7%;  */
+  margin-bottom: 2rem;
+  /* Add some space between the characters section and "Other Characters" */
+}
+
+.other-characters .inside-other-characters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+}
+
+.other-characters .inside-other-characters > a {
+  font-size: 2rem;
+  /* color: #fff; */
+  /* font-size: 1.4rem; */
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.hidden-content {
+  display: none;
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-top: 1rem;
+  margin: 0;
+  padding: 0.8rem 7%;
+  max-width: 60rem;
+}
+
+.hidden-content.active {
+  display: block; /* Show the hidden content when the 'active' class is applied */
+}
+
+.hidden {
+  display: none;
+}
+.other-characters-button {
+  cursor: pointer;
+}
+.inside-other-characters a:hover {
+  color: #fff;
+}
+/* Hide the chevron-up icon initially */
+/* #chevronUpIcon {
+  display: none;
+} */
+
+/* Show the chevron-down icon initially */
+/* #chevronDownIcon {
+  display: inline-block;
+} */
+/* Characters end */
+
+/* Contact Start */
+.contact {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact h2 {
+  /* text-align: center; */
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.contact a {
+  /* text-align: center; */
+  font-size: 2rem;
+
+  color: var(--primary);
+  margin: 1.5rem;
+}
+/* Contact End */
+
+footer {
+  width: 100%;
+  border-top: 1px solid var(--primary);
+  text-align: center;
+  font-weight: 100;
+}
+
+/* Modal Box */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-container {
+  position: relative;
+  background-color: #e7ccbc;
+  color: var(--bg);
+  /* margin: 20% auto; */
+  padding: 1.8rem;
+  border: 1px solid #666;
+  /* width: auto;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+  max-width: 90%; /* Limit the maximum width to 90% of the viewport width */
+  max-height: 90%; /* Limit the maximum height to 90% of the viewport height */
+  overflow: auto; /* Allow scrolling if the content overflows the modal */
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #120f12;
+  cursor: pointer;
+  height: 2rem;
+  width: auto;
+}
+
+.modal-container .close-icon:hover {
+  color: #fff;
+}
+
+.modal-content {
+  display: flex;
+  /* biar bagus di layar kecil */
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  position: relative;
+}
+
+.modal-content h3 {
+  /* margin-top: 7rem; */
+  color: var(--bg);
+  font-size: 2.5rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.8rem;
+}
+
+.modal-content img {
+  height: 25rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Media Queries pakai responsive breakpoints*/
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+  .other-characters {
+    margin: 4rem;
+  }
+
+  .hero::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    /* color: rgb(18, 15, 18); */
+    background: linear-gradient(
+      0deg,
+      rgba(18, 15, 18, 1) 8%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+}
+/* .modal-container {
+  width: 90%;
+  height: 70%;
+} */
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    /* biar mudah menggerakakan tanpa mengganggu elemen sekitarnya */
+    position: absolute;
+    top: 100%;
+    /* biar keluar dari layar */
+    right: -100%;
+    background-color: var(--primary);
+    width: 30rem;
+    /* vh biar memenuhi layar */
+    height: 100vh;
+    transition: 0.5s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    /* biar tulisannya ke bawah */
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a:hover {
+    color: #fff;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    /* biar ga kepanjangan garisnya */
+    transform: scaleX(0.2);
+  }
+
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
+  /* Characters Section */
+  #blank {
+    display: none;
+  }
+
+  .characters {
+    padding: 4rem;
+  }
+  .characters .characters-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .characters .characters-grid .left-container .contents,
+  .characters .characters-grid .right-container .contents {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+  .other-characters {
+    margin: -5rem;
+  }
+  /* contact */
+  .contact {
+    margin-top: 8rem;
+  }
+
+  /* modal */
+  .modal-content {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 480px) {
+  html {
+    font-size: 55%;
+  }
+
+  .characters .characters-grid {
+    grid-template-columns: 1fr;
+  }
+}
