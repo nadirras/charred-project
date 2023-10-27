@@ -177,7 +177,7 @@ body {
   position: relative;
 }
 
-/* ngasih gradasi */
+/* Gradient overlay */
 .hero::after {
   content: "";
   display: block;
@@ -185,21 +185,49 @@ body {
   width: 100%;
   height: 30%;
   bottom: 0;
-  /* color: rgb(18, 15, 18); */
   background: linear-gradient(
     0deg,
-    rgba(18, 15, 18, 1) 8%,
-    rgba(255, 255, 255, 0) 70%
+    rgba(18, 15, 18, 1),
+    rgba(255, 255, 255, 0)
   );
 }
 
+/* Hero start */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("img/library.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Gradient overlay */
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(18, 15, 18, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Content styling */
 .hero .content {
-  padding: 1.4rem 7%;
+  padding: 3rem 7%; /* Adjusted padding for better text positioning */
   max-width: 60rem;
+  text-align: center; /* Center content */
 }
 
 .hero .content h1 {
-  font-size: 5rem;
+  font-size: 3.5rem; /* Reduced font size for improved readability */
   color: #fff;
   text-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
   line-height: 1.3;
@@ -209,17 +237,19 @@ body {
   color: #e7ccbc;
 }
 
+.hero .content .shadow {
+  color: #000;
+}
+
 .hero .content p {
   font-size: 1.6rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem; /* Slightly increased margin */
   line-height: 1.5;
   text-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
-  /* mencampurkan dua warna yang overlap (asa gaterlalu ada bedanya sih di sini mah, kecuali pake yg book.jpg */
-  /* mix-blend-mode: difference; */
 }
 
 .hero .content a {
-  margin-top: 1rem;
+  margin-top: 1.5rem; /* Slightly increased margin */
   display: inline-block;
   padding: 1rem 3rem;
   font-size: 1.4rem;
@@ -227,6 +257,8 @@ body {
   background-color: var(--primary);
   border-radius: 0.8rem;
   box-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
+  text-decoration: none; /* Prevent underline on hover */
+  transition: background-color 0.3s, color 0.3s; /* Added smooth transition */
 }
 
 .hero .content a:hover {
@@ -234,6 +266,8 @@ body {
   background-color: #fff;
   color: #120f12;
 }
+
+/* Hero overlay styling */
 .hero-overlay {
   content: "";
   display: block;
@@ -243,18 +277,18 @@ body {
   bottom: 0;
   background: linear-gradient(
     0deg,
-    rgba(18, 15, 18, 1) 8%,
-    rgba(255, 255, 255, 0) 70%
+    rgba(18, 15, 18, 1),
+    rgba(255, 255, 255, 0)
   );
   backdrop-filter: blur(0.5px); /* Add blur for a smoother effect */
 }
-
 /* Hero end */
 
 /* Story start */
 .story {
   /* padding gede gede biar ke bawah keliatan tulisannya. Kalau 7% kiri kanan 1.4rem bawah */
   padding: 8rem 7% 1.4rem;
+  margin: 3rem;
 }
 
 .story h2 {
@@ -267,27 +301,36 @@ body {
   display: flex;
 }
 
-.story .row .story-img {
+.story .row .story-img-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.story .row .story-img-content .story-img {
+  display: flex;
   flex: 1 1 20rem;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 2rem;
 }
 
-.story .row .story-img img {
-  width: 85%;
+.story .row .story-img-content .story-img .isolation-cover {
+  width: 35%;
 }
 
-.story .row .content {
+.story .row .story-img-content .content {
   flex: 1 1 35rem;
   padding: 0 0.5rem;
 }
 
-.story .row .content h3 {
+.story .row .story-img-content .content h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--primary);
   margin-top: 1rem;
 }
 
-.story .row .content p {
+.story .row .story-img-content .content p {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
   font-weight: 100;
@@ -299,11 +342,11 @@ body {
   flex-wrap: wrap;
 }
 
-.story .row .content {
+.story .row .story-img-content .content {
   padding: 0;
 }
 
-.story .row .content a {
+.story .row .story-img-content .content a {
   margin-top: 1rem;
   display: inline-block;
   padding: 1rem 3rem;
@@ -314,9 +357,18 @@ body {
   box-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
 }
 
-.story .row .content a:hover {
+.story .row .story-img-content .content a:hover {
   background-color: #fff;
   color: #120f12;
+}
+
+.story .row .story-img-content .story-img .sod-cover {
+  width: 35%;
+}
+
+.row-2 {
+  display: flex;
+  flex-direction: column;
 }
 /* Story end */
 
@@ -417,17 +469,21 @@ body {
 
 .hidden-content {
   display: none;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  flex-direction: column;
   font-size: 1.6rem;
   color: var(--primary);
-  margin-top: 1rem;
-  margin: 0;
+  /* margin-top: 1rem;
+  margin: 0; */
+  margin: 1rem auto;
   padding: 0.8rem 7%;
   max-width: 60rem;
 }
 
 .hidden-content.active {
-  display: block; /* Show the hidden content when the 'active' class is applied */
+  display: flex; /* Show the hidden content when the 'active' class is applied */
 }
 
 .hidden {
@@ -553,6 +609,13 @@ footer {
   height: 25rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
+}
+
+/* Swal */
+.custom-confirm-class {
+  background-color: #120f12 !important;
+  color: #fff;
+  border-color: #120f12 !important;
 }
 
 /* Media Queries pakai responsive breakpoints*/

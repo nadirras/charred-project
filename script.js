@@ -61,31 +61,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // adjust image dimension
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("modal");
-  const modalContainer = document.querySelector(".modal-container");
-  const modalImage = document.getElementById("modalImage");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const modal = document.getElementById("modal");
+//   const modalContainer = document.querySelector(".modal-container");
+//   const modalImage = document.getElementById("modalImage");
 
-  modalImage.addEventListener("load", () => {
-    const imageWidth = modalImage.naturalWidth;
-    const imageHeight = modalImage.naturalHeight;
+//   modalImage.addEventListener("load", () => {
+//     const imageWidth = modalImage.naturalWidth;
+//     const imageHeight = modalImage.naturalHeight;
 
-    // Set the modal container's width and height to match the image
-    modalContainer.style.width = `${imageWidth}px`;
-    modalContainer.style.height = `${imageHeight}px`;
+//     // Set the modal container's width and height to match the image
+//     modalContainer.style.width = `${imageWidth}px`;
+//     modalContainer.style.height = `${imageHeight}px`;
 
-    // Show the modal after setting the dimensions
-    modal.style.display = "flex";
+//     // Show the modal after setting the dimensions
+//     modal.style.display = "flex";
+//   });
+
+//   // Add the rest of your modal logic here
+//   document.querySelector("#peta-akademi").onclick = (e) => {
+//     e.preventDefault();
+//     modal.classList.toggle("active");
+//   };
+
+//   document.querySelector(".close-icon").onclick = (e) => {
+//     e.preventDefault();
+//     modal.classList.remove("active");
+//   };
+// });
+
+document.querySelector("#peta-akademi").onclick = (e) => {
+  e.preventDefault();
+  //add swal fire
+  Swal.fire({
+    title: "Peta Akademi Mangroveshield",
+    // text: "Modal with a custom image.",
+    imageUrl: "img/markas-akademi2.jpg",
+    imageWidth: 1000,
+    // imageHeight: 200,
+    imageAlt: "Custom image",
+    background: "#fff",
+    customClass: {
+      confirmButton: "custom-confirm-class",
+    },
   });
-
-  // Add the rest of your modal logic here
-  document.querySelector("#peta-akademi").onclick = (e) => {
-    e.preventDefault();
-    modal.classList.toggle("active");
-  };
-
-  document.querySelector(".close-icon").onclick = (e) => {
-    e.preventDefault();
-    modal.classList.remove("active");
-  };
-});
+};

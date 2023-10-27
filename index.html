@@ -19,6 +19,12 @@
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+
     <link rel="stylesheet" href="styles.css" />
     <title>Charred Project</title>
   </head>
@@ -53,45 +59,75 @@
 
     <!-- Hero start -->
     <section class="hero" id="home">
-      <!-- section biar penuh satu layar dan kasih image sedangkan main isinya -->
+      <!-- Ensure the section fills the entire screen and features a captivating image -->
       <div class="content">
-        <h1><span>Isolation</span> is now available in online stores!</h1>
-        <p>Welcome to the suspenseful realm of Charred Project!</p>
-        <a href="https://linktr.ee/noirrosetea" target="blank" class="cta"
-          >Buy Now</a
+        <h1><span>Isolation</span> was just the beginning...</h1>
+        <p>
+          Prepare for the next chapter in the suspenseful realm of Charred
+          Project!
+        </p>
+        <a href="https://linktr.ee/noirrosetea" target="blank" class="cta">
+          Discover <span class="shadow">Shadows of Deception</span></a
         >
       </div>
       <div class="hero-overlay"></div>
     </section>
+
     <!-- Hero end -->
 
     <!-- Story start -->
     <section id="story" class="story">
       <h2>Story</h2>
       <div class="row">
-        <div class="story-img">
-          <img src="img/isolation-cover.jpg" alt="Story" />
-        </div>
-        <div class="content">
-          <h3>Buku 0: Isolation</h3>
-          <p>
-            Thraver merupakan seorang anak SMA asrama yang sering memecahkan
-            kasus kecil di sekolahnya, seperti barang hilang hingga perundungan.
-            Suatu hari, ia merasa diikuti dan sesampainya di rumah, ternyata ia
-            diculik. Ia terbangun di sebuah rumah mewah bernuansa kuno yang
-            menurutnya asing. <br />
+        <div class="story-img-content">
+          <div class="story-img">
+            <img
+              src="img/isolation-cover.jpg"
+              class="isolation-cover"
+              alt="Story"
+            />
+            <div class="content">
+              <h3>Buku 0: Isolation</h3>
+              <p>
+                Thraver merupakan seorang anak SMA asrama yang sering memecahkan
+                kasus kecil di sekolahnya, seperti barang hilang hingga
+                perundungan. Suatu hari, ia merasa diikuti dan sesampainya di
+                rumah, ternyata ia diculik. Ia terbangun di sebuah rumah mewah
+                bernuansa kuno yang menurutnya asing. <br />
 
-            Thraver disambut dengan baik oleh orang-orang di rumah itu dan
-            merasa kerasan di sana. Namun, ternyata keindahan itu tidak
-            berlangsung lama setelah mengetahui bahwa yang ia tempati adalah
-            tempat yang salah, yaitu tempat percobaan manusia. Bagaimana ia bisa
-            bebas dari tempat mengerikan itu?
-          </p>
-          <!-- <a href="#" id="peta-akademi"
-            >Peta Area Akademi Pusat Mangroveshield
-          </a> -->
-          <h3>Buku 1: Shadows of Deception</h3>
-          <h4>Coming Soon...</h4>
+                Thraver disambut dengan baik oleh orang-orang di rumah itu dan
+                merasa kerasan di sana. Namun, ternyata keindahan itu tidak
+                berlangsung lama setelah mengetahui bahwa yang ia tempati adalah
+                tempat yang salah, yaitu tempat percobaan manusia. Bagaimana ia
+                bisa bebas dari tempat mengerikan itu?
+              </p>
+              <a href="#" id="peta-akademi"
+                >Peta Area Akademi Pusat Mangroveshield
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-img-content">
+          <div class="story-img">
+            <img src="img/sod-cover.jpg" class="sod-cover" alt="Story" />
+            <div class="content">
+              <h3 class="sod">Buku 1: Shadows of Deception</h3>
+              <p>
+                Thraver berhasil keluar dari Mangroveshield bersama sebelas
+                orang rekannya. Renshaw yang ternyata sudah terlibat dengan
+                suatu organisasi mata-mata rahasia yang dibentuk oleh wali kota
+                menarik mereka untuk masuk organisasi yang bernama ETA
+                (Exotechnology Tactical Agency) itu. Thraver pun diberi
+                perlindungan dari ETA dengan syarat mengikuti serangkaian
+                pelatihan untuk bisa membela dirinya jika diserang oleh musuh.
+                Berbagai masalah terjadi selama menjadi agen rahasia tersebut,
+                bahkan berhadapan dengan sekelompok anggota organisasi
+                Mangroveshield. Bagaimana dia bisa bertahan saat gencarnya
+                ancaman Mangroveshield?
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -159,11 +195,13 @@
         </a>
       </div>
       <div class="hidden-content" id="hiddenContent">
+        <h3>Ash</h3>
         <h3>Ansel</h3>
         <h3>Brent</h3>
         <h3>Carson</h3>
         <h3>Alsa</h3>
         <h3>Bart</h3>
+        <h3>And many more...</h3>
       </div>
     </div>
     <!-- Characters end -->
