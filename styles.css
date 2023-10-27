@@ -285,6 +285,7 @@ body {
 /* Hero end */
 
 /* Story start */
+/* Story start */
 .story {
   /* padding gede gede biar ke bawah keliatan tulisannya. Kalau 7% kiri kanan 1.4rem bawah */
   padding: 8rem 7% 1.4rem;
@@ -297,56 +298,38 @@ body {
   margin-bottom: 3rem;
 }
 
-.story .row {
+.story .story-row {
   display: flex;
+  justify-content: space-between;
 }
 
-.story .row .story-img-content {
+.story .story-item {
+  flex: 0 0 calc(50% - 1rem); /* 50% width with a 1rem margin */
   display: flex;
   flex-direction: column;
-}
-
-.story .row .story-img-content .story-img {
-  display: flex;
-  flex: 1 1 20rem;
-  flex-direction: row;
   gap: 2rem;
-  margin: 2rem;
+  margin: 1rem; /* 1rem margin on all sides */
 }
 
-.story .row .story-img-content .story-img .isolation-cover {
-  width: 35%;
+.story .story-item img {
+  width: 100%;
 }
 
-.story .row .story-img-content .content {
-  flex: 1 1 35rem;
-  padding: 0 0.5rem;
-}
-
-.story .row .story-img-content .content h3 {
+.story .story-item .content h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--primary);
   margin-top: 1rem;
 }
 
-.story .row .story-img-content .content p {
+.story .story-item .content p {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
   font-weight: 100;
   line-height: 1.8;
 }
 
-.story .row {
-  /* biar turun ke bawah */
-  flex-wrap: wrap;
-}
-
-.story .row .story-img-content .content {
-  padding: 0;
-}
-
-.story .row .story-img-content .content a {
+.story .story-item .content a {
   margin-top: 1rem;
   display: inline-block;
   padding: 1rem 3rem;
@@ -357,19 +340,15 @@ body {
   box-shadow: 5px 3px 1px rgba(2, 2, 2, 0.7);
 }
 
-.story .row .story-img-content .content a:hover {
+.story .story-item .content a:hover {
   background-color: #fff;
   color: #120f12;
 }
 
-.story .row .story-img-content .story-img .sod-cover {
-  width: 35%;
+.story .story-item .sod-cover {
+  width: 100%;
 }
 
-.row-2 {
-  display: flex;
-  flex-direction: column;
-}
 /* Story end */
 
 /* Pang ribedna ieu */
@@ -730,6 +709,19 @@ footer {
   /* modal */
   .modal-content {
     flex-wrap: wrap;
+  }
+
+  .story .story-item img {
+    width: 75%;
+  }
+
+  .story .story-item .sod-cover {
+    width: 75%;
+  }
+
+  .story .story-row {
+    display: flex;
+    flex-direction: column;
   }
 }
 
